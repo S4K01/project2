@@ -1,0 +1,339 @@
+:root {
+  /* Colors */
+  --primary-cyan: #26bba4;
+  --primary-blue: #6173ff;
+  --dark-grayish-blue: #4a5568;
+  --very-dark-blue: #2d3748;
+  --grayish-blue: #9fabb2;
+  --light-gray: #f5f6f8;
+  --white: #ffffff;
+
+  /* Typography */
+  --font-family: "Bai Jamjuree", -apple-system, BlinkMacSystemFont, "Segoe UI",
+    sans-serif;
+  --font-size-base: 16px;
+  --font-size-sm: 14px;
+  --font-size-lg: 18px;
+  --font-size-xl: 24px;
+  --font-size-2xl: 32px;
+  --font-size-3xl: 48px;
+
+  --font-weight-normal: 400;
+  --font-weight-medium: 500;
+  --font-weight-semibold: 600;
+  --font-weight-bold: 700;
+
+  --line-height-tight: 1.2;
+  --line-height-normal: 1.5;
+  --line-height-relaxed: 1.75;
+
+  /* Spacing */
+  --spacing-xs: 8px;
+  --spacing-sm: 16px;
+  --spacing-md: 24px;
+  --spacing-lg: 32px;
+  --spacing-xl: 48px;
+  --spacing-2xl: 64px;
+
+  /* Border Radius */
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 24px;
+  --radius-full: 9999px;
+
+  /* Shadows */
+  --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.08);
+  --shadow-md: 0 4px 16px rgba(0, 0, 0, 0.1);
+  --shadow-lg: 0 8px 32px rgba(0, 0, 0, 0.12);
+
+  /* Transitions */
+  --transition-fast: 150ms ease-in-out;
+  --transition-base: 250ms ease-in-out;
+  --transition-slow: 350ms ease-in-out;
+}
+
+/* animation for C */
+
+@keyframes spinning {
+  from {
+    transform: scaleX(1);
+    -webkit-transform: scaleX(1);
+    -moz-transform: scaleX(1);
+    -ms-transform: scaleX(1);
+    -o-transform: scaleX(1);
+  }
+  to {
+    transform: scaleX(-1);
+    -webkit-transform: scaleX(-1);
+    -moz-transform: scaleX(-1);
+    -ms-transform: scaleX(-1);
+    -o-transform: scaleX(-1);
+  }
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  font-size: var(--font-size-base);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-family);
+  font-weight: var(--font-weight-normal);
+  line-height: var(--line-height-normal);
+  color: var(--dark-grayish-blue);
+  background-color: var(--white);
+  overflow-x: hidden;
+}
+
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+input,
+button,
+textarea,
+select {
+  font: inherit;
+  color: inherit;
+}
+
+button {
+  cursor: pointer;
+  border: none;
+  background: none;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+ul,
+ol {
+  list-style: none;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: var(--font-weight-semibold);
+  line-height: var(--line-height-tight);
+  color: var(--very-dark-blue);
+  opacity: 1;
+  text-align: center;
+  font-size: var(--font-size-2xl);
+  padding-inline: var(--spacing-sm);
+}
+
+p {
+  line-height: var(--line-height-relaxed);
+  text-align: center;
+  font-size: var(--font-size-base);
+  padding-inline: calc(var(--spacing-lg) + 2px);
+  color: var(--grayish-blue);
+}
+
+.gap {
+  margin: auto;
+  width: 100%;
+  height: 200px;
+  background-color: var(--light-gray);
+}
+
+.gap-md {
+  width: 100%;
+  height: 12ch;
+}
+
+.gap-sm {
+  width: 100%;
+  height: 10ch;
+}
+
+.container-mobile {
+  display: grid;
+  grid-template-columns: 1fr;
+}
+
+.my-copy {
+  font-weight: 100;
+  margin: auto;
+  margin-top: 100px;
+  margin-bottom: 30px;
+  width: 85px;
+  animation-name: spinning;
+  animation-fill-mode: both;
+  animation-iteration-count: infinite;
+  animation-duration: 1s;
+  animation-timing-function: linear;
+  animation-direction: alternate;
+}
+
+.first-sec,
+.second-sec,
+.th-sec,
+.fr-sec,
+.last-sec {
+  display: grid;
+  justify-content: center;
+  gap: 20px;
+  margin: 30px auto;
+}
+
+.container-first-sec {
+  background: linear-gradient(135deg, #1a2980 0%, #26d0ce 100%);
+  padding: 10px;
+}
+
+.button-design {
+  color: var(--white);
+  width: fit-content;
+  padding: 10px;
+  padding-inline: 80px;
+  margin: auto;
+  border-radius: var(--radius-lg);
+  -webkit-border-radius: var(--radius-lg);
+  -moz-border-radius: var(--radius-lg);
+  -ms-border-radius: var(--radius-lg);
+  -o-border-radius: var(--radius-lg);
+  transition: 0.12s 0s linear;
+  -webkit-transition: 0.12s 0s linear;
+  -moz-transition: 0.12s 0s linear;
+  -ms-transition: 0.12s 0s linear;
+  -o-transition: 0.12s 0s linear;
+}
+
+.button-design:hover {
+  filter: grayscale(0.5);
+  -webkit-filter: grayscale(0.5);
+  transform: scale(1.1);
+  -webkit-transform: scale(1.1);
+  -moz-transform: scale(1.1);
+  -ms-transform: scale(1.1);
+  -o-transform: scale(1.1);
+}
+
+.ios-button {
+  box-shadow: 0px 2px 7px 0px var(--primary-cyan);
+  background-color: var(--primary-cyan);
+}
+
+.mac-button {
+  box-shadow: 0px 2px 7px 0px var(--primary-blue);
+  background-color: var(--primary-blue);
+}
+
+.second-sec p:not(:last-of-type) {
+  margin-bottom: 50px;
+}
+
+.second-sec img,
+.th-sec img {
+  width: 300px;
+  margin: auto;
+  margin-bottom: 35px;
+}
+
+.svg-edit {
+  width: 50px !important;
+  margin: auto !important;
+  margin-bottom: 15px !important;
+}
+
+.gap-md + h2{
+    text-transform: capitalize;
+    margin: 10px auto;
+    font-size: 40px;
+}
+
+.company img {
+  width: 100px !important;
+}
+
+.company img:nth-of-type(2) {
+  width: 80px !important;
+}
+
+.fr-sec {
+  padding: 25px;
+  background: linear-gradient(135deg, #1e3c72 0%, #2a5298 50%, #7e22ce 100%);
+  margin-bottom: 25px;
+}
+
+.fr-sec h2 {
+  color: var(--light-gray) !important;
+}
+
+.fr-sec p {
+  color: var(--light-gray) !important;
+  opacity: 0.6;
+}
+
+.last-sec {
+  padding: 10px;
+}
+
+.last-sec button:hover {
+  color: #1da1f2;
+}
+
+.social {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 25px;
+}
+
+.facebook svg path {
+  fill: #4c545c;
+  transition: fill 0.3s ease;
+}
+
+.facebook:hover svg path {
+  fill: #1877f2; /* Facebook blue */
+}
+
+.twitter svg path {
+  fill: #4c545c;
+  transition: fill 0.3s ease;
+}
+
+.twitter:hover svg path {
+  fill: #1da1f2; /* Facebook blue */
+}
+
+.inst svg path {
+  fill: #4c545c;
+  transition: fill 0.3s ease;
+}
+
+.inst:hover svg path {
+  fill: #e4405f; /* Facebook blue */
+}
+
+.logo {
+  width: 50px;
+  margin: auto;
+}
